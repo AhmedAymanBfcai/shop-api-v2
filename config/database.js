@@ -1,35 +1,9 @@
-// const mongoose = require('mongoose');
-
-// const dbConnection = () => {
-//   mongoose
-//     .connect(process.env.DB_URI)
-//     .then((conn) => {
-//       console.log(`Database Connected: ${conn.connection.host}`);
-//     })
-//     // .catch((err) => {
-//     //   console.error(`Database Error: ${err}`);
-//     //   process.exit(1);
-//     // });
-// };
-
-// module.exports = dbConnection;
-
 const mongoose = require("mongoose");
 
 const dbConnection = () => {
-  mongoose
-    .connect(
-      "mongodb+srv://ahmed123:123ahmed@ahmedaymanbfcai.7prin.mongodb.net/suqshop?retryWrites=true&w=majority"
-    )
-    .then((conn) => {
-      console.log(`Database Connected successfully :) `);
-    });
-  // .catch((err) => {
-  //   console.error(`Database Error: ${err}`);
-  //   process.exit(1);
-  // });
+  mongoose.connect(process.env.MONGO_URL).then((conn) => {
+    console.log(`Database Connected successfully :) `);
+  });
 };
 
 module.exports = dbConnection;
-
-// process.env.MONGO_URL;
